@@ -1,16 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta c5harset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="style" href="style.css">
-  <title>It's too Orange! </title>
-  <nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>It's too Orange!</title>
+  </head>
+  <body>
+    <canvas id="jsCanvas" class="canvas"></canvas>
+    <div class="controls">
+      <div class="controls__range">
+        <input
+          type="range"
+          id="jsRange"
+          min="0.1"
+          max="5.0"
+          value="2.5"
+          step="0.1"
+        />
+      </div>
+      <div class="controls__btns">
+        <button id="jsMode">Fill</button>
+        <button id="jsSave">Save</button>
+      </div>
+      <div class="controls__colors" id="JSColors">
+        <div class="controls__color" style="background-color: black"></div>
+        <div class="controls__color" style="background-color: white"></div>
+        <div class="controls__color" style="background-color: red"></div>
+        <div class="controls__color" style="background-color: orange"></div>
+        <div class="controls__color" style="background-color: yellow"></div>
+        <div class="controls_color" style="background-color: green"></div>
+        <div class="controls__color" style="background-color: blue"></div>
+        <div class="controls___color" style="background-color: navy"></div>
+        <div class="controls_color" style="background-color: purple"></div>
+      </div>
 
-  </nav>
-</head>
-<body>
-  <canvas id=jsCanvas" class="canvas"></canvas>
-  
-</body>
+      <br />
+      <br />
+    </div>
+    <script src="app.js"></script>
+  </body>
 </html>
