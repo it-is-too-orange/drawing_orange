@@ -1,5 +1,10 @@
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Your existing code here
+
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
+
 
 canvas.width = 700;
 canvas.height = 700;
@@ -39,3 +44,61 @@ if (canvas) {
   canvas.addEventListener("mouseup", stopPainting);
   canvas.addEventListener("mouseleave", stopPainting);
 }
+
+/* 
+
+*/
+function handleColorClick(event) {
+  const color = event.target.style.backgroundColor;
+  console.log("Selected color:", color);
+  ctx.strokeStyle = color;
+}
+
+
+const colors = document.getElementsByClassName("controls__color");
+
+function handleColorClick(event) {
+    const color = event.target.style.backgroundColor;
+    ctx.strokeStyle = color;
+}
+
+Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick));
+
+
+function handleColorClick(event) {
+    const color = event.target.style.backgroundColor;
+    ctx.strokeStyle = color;
+}
+
+Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick));
+
+const range = document.getElementById("jsRange");
+
+function handleRangeChange(event) {
+    const size = event.target.value;
+    ctx.lineWidth = size;
+}
+
+if (range) {
+    range.addEventListener("input", handleRangeChange);
+};
+
+const mode = document.getElementById("jsMode");
+
+let filling = false;
+
+function handleModeClick() {
+    if (filling === true) {
+        filling = false;
+        mode.innerText = "fill"
+    } else {
+        filling = true;
+        mode.innerText = "paint";
+    }
+}
+
+if (mode) {
+    mode.addEventListener("click", handleModeClick)
+}
+
+});
