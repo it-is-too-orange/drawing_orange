@@ -9,6 +9,24 @@ document.addEventListener("DOMContentLoaded", function () {
   canvas.width = 700;
   canvas.height = 700;
 
+  const canvasWidthInput = document.getElementById("canvasWidth");
+  const canvasHeightInput = document.getElementById("canvasHeight");
+  const applySizeBtn = document.getElementById("applySize");
+
+  applySizeBtn.addEventListener("click", function() {
+    const newWidth = parseInt(canvasWidthInput.value, 10);
+    const newHeight = parseInt(canvasHeightInput.value, 10);
+
+    if (!isNaN(newWidth) && !isNaN(newHeight)) {
+      canvas.width = newWidth;
+      canvas.height = newHeight;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // 여기에서 추가적으로 캔버스를 재설정하거나 기본 상태를 설정할 수 있습니다.
+    } else {
+      alert("Please enter valid width and height values.");
+    }
+  });
+
   ctx.strokeStyle = "black";
   ctx.fillStyle = "white";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
