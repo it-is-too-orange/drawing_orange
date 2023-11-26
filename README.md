@@ -1,4 +1,6 @@
 # drawing_orange
+url
+https://it-is-too-orange.github.io/drawing_orange/
 
 # proceedings
 [23.10.30]
