@@ -1,41 +1,100 @@
+/* style.css */
+
 @import "reset.css";
 
 body {
-  background-color: rgb(253, 136, 19);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 50px;
+    background-color: rgb(253, 136, 19);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
 }
 
-.canvas {
-  width: 700px;
-  height: 700px;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.068);
+.canvas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#jsCanvas {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.068);
+    margin-top: 20px;
+    cursor: crosshair; /* 마우스 모양을 십자 모양(crosshair)으로 변경 */
 }
 
 .controls {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .controls .controls__colors {
-  display: flex;
-  padding: 5px;
-  border: 3px solid rgb(246, 91, 8);
-  border-radius: 100px;
-  background-color: rgb(250, 99, 6);
+    display: flex;
+    padding: 5px;
+    border: 3px solid rgb(246, 91, 8);
+    border-radius: 100px;
+    background-color: rgb(250, 99, 6);
 }
 
 .controls__colors .controls__color {
-  width: 45px;
-  height: 40px;
-  /* box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.068);
-  border: 0.1px solid rgba(5, 5, 4, 0.582); */
-  margin: 2px;
-  border-radius: 25px;
-  cursor: pointer;
+    width: 45px;
+    height: 40px;
+    margin: 2px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* controls__colors 내의 input 요소에 대한 스타일 추가 */
+.controls__colors input {
+    width: 100%; /* input 요소가 부모 너비를 가득 채우도록 함 */
+    height: 100%;
+    opacity: 0; /* 실제로 보이지 않도록 함 */
+    position: absolute; /* 다른 요소 위에 겹쳐지도록 함 */
+    cursor: pointer; /* 커서를 포인터로 변경 */
+}
+
+.controls__size {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls__size input {
+    margin: 5px;
+}
+
+.controls__button {
+    background-color: rgb(246, 91, 8);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controls__button:hover {
+    background-color: rgb(250, 99, 6);
+}
+
+.controls__mode {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.controls__mode #jsMode {
+    margin-right: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: rgb(246, 91, 8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.controls__mode #jsMode:hover {
+    background-color: rgb(250, 99, 6);
 }
