@@ -15,38 +15,39 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <div class="header">
-      <img src="asset\img\peach-5309319_640.png" alt="Your Logo" id="homepageLogo">
-  </div>
+
   </head>
 
   <body>
     <div class="mode-selection">
+      <div><img src="asset\img\peach-5309319_640.png" alt="Your Logo" id="homepageLogo" style="height: 80px; width : 80px;"></div>
+      <div class = "mode-mode">
       <button id="paintMode" type="button" onclick="location.href='index.html'">
-        그림판 모드
+        그림판
       </button>
       <button
         id="pictionaryMode"
         type="button"
         onclick="location.href='pictionary.html'"
       >
-        픽셔너리 모드
+        픽셔너리
       </button>
       <button
         id="coloringMode"
         type="button"
         onclick="location.href='coloring.html'"
       >
-        컬러링 모드
-      </button>
+        컬러링
+      </button></div>
+      <div id="pictorgram_control" class="pictorgram_control"">
+        <button id="startPictionary">픽셔너리 시작</button>
+        <div id="pictionaryWordDisplay">정답</div>
+        <div id="timer">타이머 준비됨</div>
+        <button id="correctAnswer">정답</button>
+        <button id="pass">패스</button>
+      </div>
     </div>
-    <div id="pictorgram_control" class="pictorgram_control"">
-      <button id="startPictionary">픽셔너리 시작</button>
-      <div id="pictionaryWordDisplay">정답</div>
-      <div id="timer">타이머 준비됨</div>
-      <button id="correctAnswer">정답</button>
-      <button id="pass">패스</button>
-    </div>
+    
 
     <div class="canvas-container">
       <!-- canvas 엘리먼트를 추가하고, 클래스를 지정합니다. -->

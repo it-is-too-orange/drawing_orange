@@ -63,16 +63,30 @@ body {
 
   align-items: center;
 }
-
-.pictorgram_control{
+.mode-selection{
   display: flex;
   margin-top: 15px;
   padding: 5px;
-  
   align-items: center;
   justify-content: center;
-  background: #d9e04f;
+ 
+}
+.mode-selection>img{
+  height: 50px;
+}
+
+.mode-mode{
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 10px;
+  background-color: #ffffff;  
+}
+.pictorgram_control{
+  display: flex;
+  
+  align-items: center;
 
 }
 #startPictionary, #pictionaryWordDisplay,#timer,#correctAnswer,#pass
