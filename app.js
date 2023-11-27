@@ -39,6 +39,57 @@ document.addEventListener("DOMContentLoaded", function () {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.lineWidth = 2.5;
 
+  // 컬러링
+  const imageButtons = document.querySelectorAll("#imageButtons button");
+
+  function loadImage(imagePath) {
+    const img = new Image();
+    img.onload = function () {
+      const canvasWidth = canvas.width;
+      const canvasHeight = canvas.height;
+
+      // 이미지 크기와 캔버스 크기를 비교하여 적절한 크기로 조정
+      let imageWidth = img.width;
+      let imageHeight = img.height;
+
+      if (imageWidth > canvasWidth || imageHeight > canvasHeight) {
+        const aspectRatio = imageWidth / imageHeight;
+
+        if (imageWidth > canvasWidth) {
+          imageWidth = canvasWidth;
+          imageHeight = canvasWidth / aspectRatio;
+        }
+
+        if (imageHeight > canvasHeight) {
+          imageHeight = canvasHeight;
+          imageWidth = canvasHeight * aspectRatio;
+        }
+      }
+
+      // 이미지를 중앙에 맞추어 그림
+      const x = (canvasWidth - imageWidth) / 2;
+      const y = (canvasHeight - imageHeight) / 2;
+
+      canvas.width = canvasWidth;
+      canvas.height = canvasHeight;
+      ctx.drawImage(img, x, y, imageWidth, imageHeight);
+    };
+    img.onerror = function () {
+      console.error("Error loading image");
+    };
+    img.src = imagePath;
+  }
+
+  imageButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const imagePath = this.getAttribute("data-image-path");
+      loadImage(imagePath);
+    });
+  });
+
+  // 초기 이미지 로드
+  loadImage("asset/coloring/c_orange_1.png");
+
   let painting = false;
   let filling = false;
 
@@ -274,38 +325,4 @@ document.addEventListener("DOMContentLoaded", function () {
     clearInterval(timer);
     startPictionaryGame();
   });
-
-  //컬러링
-
-  // 이미지를 캔버스에 로드하는 함수
-
-  function loadImage(imagePath, canvas, ctx) {
-    console.log("Loading image:", imagePath); // 로그 추가
-    const img = new Image();
-    img.onload = function () {
-      canvas.width = img.width;
-      canvas.height = img.height;
-      ctx.drawImage(img, 0, 0);
-    };
-    img.onerror = function () {
-      console.error("Error loading image");
-    };
-    img.src = imagePath;
-  }
-
-  // 이미지 선택기의 변경을 감지하고 이미지를 로드하는 이벤트 리스너
-  function setupImageLoader(imageSelector, canvas, ctx) {
-    imageSelector.addEventListener("change", function () {
-      loadImage(this.value, canvas, ctx);
-    });
-  }
-  // 이미지 선택기 요소를 가져오는 부분
-  const imageSelector = document.getElementById("imageSelector");
-  console.log(imageSelector);
-
-  // 이미지 로더 설정
-  setupImageLoader(imageSelector, canvas, ctx);
-
-  // 초기 이미지 로드
-  loadImage(imageSelector.value, canvas, ctx);
 });
