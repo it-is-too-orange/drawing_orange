@@ -152,3 +152,18 @@ body {
 .controls__mode #jsMode:hover {
   background-color: rgb(250, 99, 6);
 }
+
+/* Example of styling the logo in CSS */
+#homepageLogo {
+  width: 250px; /* Adjust as needed */
+  height: auto; /* Keeps the aspect ratio */
+  margin: 20px; /* Adjust spacing around the logo */
+  /* More styles as needed */
+}
+
+/* Example of a media query for smaller screens */
+@media screen and (max-width: 600px) {
+  #homepageLogo {
+      width: 50px; /* Smaller size for smaller screens */
+  }
+}
