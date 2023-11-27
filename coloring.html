@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>It's too Orange! -Coloring</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div class="mode-selection">
+      <button id="paintMode" type="button" onclick="location.href='index.html'">
+        그림판 모드
+      </button>
+      <button
+        id="pictionaryMode"
+        type="button"
+        onclick="location.href='pictionary.html'"
+      >
+        픽셔너리 모드
+      </button>
+      <button
+        id="coloringMode"
+        type="button"
+        onclick="location.href='coloring.html'"
+      >
+        컬러링 모드
+      </button>
+    </div>
+    <div>
+      <label for="imageSelector">이미지 선택:</label>
+      <select id="imageSelector">
+        <option value="asset/coloring/c_orange_1.png">이미지 1</option>
+        <option value="asset/coloring/c_orange_2.png">이미지 2</option>
+        <option value="asset/coloring/c_orange_3.png">이미지 3</option>
+        <option value="asset/coloring/cute_01.jpg">이미지 4</option>
+        <option value="asset/coloring/cute_02.jpg">이미지 5</option>
+        <option value="asset/coloring/cute_03.jpg">이미지 6</option>
+        <option value="asset/coloring/cute_04.jpg">이미지 7</option>
+        <option value="asset/coloring/cute_05.jpg">이미지 8</option>
+        <option value="asset/coloring/cute_06.jpg">이미지 9</option>
+        <option value="asset/coloring/cute_07.jpg">이미지 10</option>
+      </select>
+    </div>
+
+    <div class="canvas-container">
+      <!-- canvas 엘리먼트를 추가하고, 클래스를 지정합니다. -->
+      <canvas id="jsCanvas" class="canvas"></canvas>
+    </div>
+    <div class="controls">
+      <!-- 레인지 인풋과 버튼들을 추가하고 클래스를 지정합니다. -->
+      <div class="controls__range_fill_save">
+        <div class="controls__range">
+          <input
+            type="range"
+            class="controls__range__input"
+            id="jsRange"
+            min="0.1"
+            max="50.0"
+            value="2.5"
+            step="0.1"
+          />
+        </div>
+        <div class="controls__btns">
+          <button id="jsMode"><i class="material-icons">brush</i></button>
+          <button id="jsSave"><i class="material-icons">save</i></button>
+        </div>
+      </div>
+      <!-- 컬러 선택 버튼들을 추가하고 클래스를 지정합니다. -->
+      <div class="controls__colors" id="JSColors">
+        <div class="controls__color" style="background-color: black"></div>
+        <div class="controls__color" style="background-color: white"></div>
+        <div class="controls__color" style="background-color: red"></div>
+        <div class="controls__color" style="background-color: orange"></div>
+        <div class="controls__color" style="background-color: yellow"></div>
+        <div class="controls__color" style="background-color: green"></div>
+        <div class="controls__color" style="background-color: blue"></div>
+        <div class="controls__color" style="background-color: navy"></div>
+        <div class="controls__color" style="background-color: purple"></div>
+      </div>
+
+      <!-- 캔버스 크기 조절을 위한 입력 요소들을 추가하고 클래스를 지정합니다. -->
+      <div class="controls__size">
+        <p style="font-weight: bold; font-size: px">[</p>
+        <div class="material-symbols-outlined">note</div>
+        <p style="font-weight: bold; font-size: 15px">Canvas size]</p>
+        <div class="material-symbols-outlined">width</div>
+        <div>:</div>
+
+        <input type="number" id="canvasWidth" placeholder="width" />
+
+        <div class="material-symbols-outlined">height</div>
+        <div>:</div>
+        <input type="number" id="canvasHeight" placeholder="height" />
+        <button id="applySize">Apply</button>
+      </div>
+    </div>
+    <!-- 애플리케이션 스크립트를 로드합니다. -->
+    <script src="app.js"></script>
+  </body>
+</html>

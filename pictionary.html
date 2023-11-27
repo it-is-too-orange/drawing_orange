@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>It's too Orange! -Pictionary</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+
+  <body>
+    <div class="mode-selection">
+      <button id="paintMode" type="button" onclick="location.href='index.html'">
+        그림판 모드
+      </button>
+      <button
+        id="pictionaryMode"
+        type="button"
+        onclick="location.href='pictionary.html'"
+      >
+        픽셔너리 모드
+      </button>
+      <button
+        id="coloringMode"
+        type="button"
+        onclick="location.href='coloring.html'"
+      >
+        컬러링 모드
+      </button>
+    </div>
+    <button id="startPictionary">픽셔너리 시작</button>
+    <div id="pictorgram_control">
+      <div id="pictionaryWordDisplay"></div>
+      <div id="timer">타이머 준비됨</div>
+      <button id="correctAnswer">정답</button>
+      <button id="pass">패스</button>
+    </div>
+
+    <div class="canvas-container">
+      <!-- canvas 엘리먼트를 추가하고, 클래스를 지정합니다. -->
+      <canvas id="jsCanvas" class="canvas"></canvas>
+    </div>
+    <div class="controls">
+      <!-- 레인지 인풋과 버튼들을 추가하고 클래스를 지정합니다. -->
+      <div class="controls__range_fill_save">
+        <div class="controls__range">
+          <input
+            type="range"
+            class="controls__range__input"
+            id="jsRange"
+            min="0.1"
+            max="50.0"
+            value="2.5"
+            step="0.1"
+          />
+        </div>
+        <div class="controls__btns">
+          <button id="jsMode"><i class="material-icons">brush</i></button>
+          <button id="jsSave"><i class="material-icons">save</i></button>
+        </div>
+      </div>
+      <!-- 컬러 선택 버튼들을 추가하고 클래스를 지정합니다. -->
+      <div class="controls__colors" id="JSColors">
+        <div class="controls__color" style="background-color: black"></div>
+        <div class="controls__color" style="background-color: white"></div>
+        <div class="controls__color" style="background-color: red"></div>
+        <div class="controls__color" style="background-color: orange"></div>
+        <div class="controls__color" style="background-color: yellow"></div>
+        <div class="controls__color" style="background-color: green"></div>
+        <div class="controls__color" style="background-color: blue"></div>
+        <div class="controls__color" style="background-color: navy"></div>
+        <div class="controls__color" style="background-color: purple"></div>
+      </div>
+
+      <!-- 캔버스 크기 조절을 위한 입력 요소들을 추가하고 클래스를 지정합니다. -->
+      <div class="controls__size">
+        <p style="font-weight: bold; font-size: px">[</p>
+        <div class="material-symbols-outlined">note</div>
+        <p style="font-weight: bold; font-size: 15px">Canvas size]</p>
+        <div class="material-symbols-outlined">width</div>
+        <div>:</div>
+
+        <input type="number" id="canvasWidth" placeholder="width" />
+
+        <div class="material-symbols-outlined">height</div>
+        <div>:</div>
+        <input type="number" id="canvasHeight" placeholder="height" />
+        <button id="applySize">Apply</button>
+      </div>
+    </div>
+    <!-- hex-to-rgba 라이브러리를 가져옵니다. -->
+    <script src="https://cdn.jsdelivr.net/npm/hex-to-rgba"></script>
+    <!-- 애플리케이션 스크립트를 로드합니다. -->
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -56,16 +56,68 @@ body {
   position: absolute; /* 다른 요소 위에 겹쳐지도록 함 */
   cursor: pointer; /* 커서를 포인터로 변경 */
 }
+.controls__range_fill_save {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+
+  align-items: center;
+}
+.controls__range__input {
+  -webkit-appearance: none; /* 크롬, 사파리 등 웹킷 기반 브라우저에서 기본 스타일 제거 */
+  width: 200px; /* 너비 조절 */
+  height: 25px; /* 높이 조절 */
+  background: rgb(222, 162, 11); /* 배경색 */
+  border-radius: 20px; /* 모서리를 둥글게 */
+  outline: none; /* 포커스 시 발생하는 테두리 제거 */
+  padding: 0px 10px; /* 내부 여백 제거 */
+}
+
+.controls__range__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -1.5%;
+  width: 5px; /* 슬라이더 버튼의 너비 */
+  height: 160%; /* 슬라이더 버튼의 높이 */
+  background: #333; /* 슬라이더 버튼의 배경색 */
+  border-radius: 2px; /* 슬라이더 버튼의 모서리를 둥글게 */
+
+  cursor: pointer; /* 커서를 포인터로 변경 */
+}
+
+.controls__range__input::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 40%;
+  background: #ddd; /* 트랙의 배경색 */
+  border-radius: 5px; /* 트랙의 모서리 둥글게 */
+}
 
 .controls__size {
   display: flex;
   margin-top: 10px;
 
   align-items: center;
+  justify-content: center;
 }
 
 .controls__size input {
   margin: 5px;
+  width: 50px;
+  border-radius: 5px;
+  border: 2px solid rgb(0, 0, 0);
+  text-align: right;
+}
+
+#applySize {
+  background-color: rgb(219, 219, 219);
+  color: black;
+  border: 2px;
+
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  width: 50px;
+  border-radius: 5px;
+  border: 2px solid rgb(246, 91, 8);
 }
 
 .controls__button {
