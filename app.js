@@ -87,8 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // 초기 이미지 로드
-  loadImage("asset/coloring/c_orange_1.png");
+
 
   let painting = false;
   let filling = false;

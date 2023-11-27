@@ -63,6 +63,32 @@ body {
 
   align-items: center;
 }
+
+.pictorgram_control{
+  display: flex;
+  margin-top: 15px;
+  padding: 5px;
+  
+  align-items: center;
+  justify-content: center;
+  background: #d9e04f;
+  border-radius: 10px;
+
+}
+#startPictionary, #pictionaryWordDisplay,#timer,#correctAnswer,#pass
+{
+  margin: 5px;
+  padding: 5px;
+  align-items: center;
+  justify-conten: center;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  background-color: #ffffff;
+  
+}
+
+
+
 .controls__range__input {
   -webkit-appearance: none; /* 크롬, 사파리 등 웹킷 기반 브라우저에서 기본 스타일 제거 */
   width: 200px; /* 너비 조절 */
