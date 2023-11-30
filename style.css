@@ -63,34 +63,35 @@ body {
 
   align-items: center;
 }
-.mode-selection{
+.mode-selection {
   display: flex;
   margin-top: 15px;
   padding: 5px;
   align-items: center;
   justify-content: center;
- 
 }
-.mode-selection>img{
+.mode-selection > img {
   height: 50px;
 }
 
-.mode-mode{
+.mode-mode {
   display: flex;
   margin: 5px;
   padding: 5px;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 10px;
-  background-color: #ffffff;  
+  background-color: #ffffff;
 }
-.pictorgram_control{
+.pictorgram_control {
   display: flex;
-  
-  align-items: center;
 
+  align-items: center;
 }
-#startPictionary, #pictionaryWordDisplay,#timer,#correctAnswer,#pass
-{
+#startPictionary,
+#pictionaryWordDisplay,
+#timer,
+#correctAnswer,
+#pass {
   margin: 5px;
   padding: 5px;
   align-items: center;
@@ -98,10 +99,8 @@ body {
   border: 2px solid rgb(0, 0, 0);
   border-radius: 10px;
   background-color: #ffffff;
-  width: min-content=;  
+  width: min-content=;
 }
-
-
 
 .controls__range__input {
   -webkit-appearance: none; /* 크롬, 사파리 등 웹킷 기반 브라우저에서 기본 스타일 제거 */
@@ -204,6 +203,6 @@ body {
 /* Example of a media query for smaller screens */
 @media screen and (max-width: 600px) {
   #homepageLogo {
-      width: 50px; /* Smaller size for smaller screens */
+    width: 50px; /* Smaller size for smaller screens */
   }
 }

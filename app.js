@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ctx.lineWidth = 2.5;
 
   // 컬러링
-  const imageButtons = document.querySelectorAll("#imageButtons button");
+  const imageButtons = document.querySelectorAll("button[data-image-path]");
 
   function loadImage(imagePath) {
     const img = new Image();
@@ -86,8 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
       loadImage(imagePath);
     });
   });
-
-
 
   let painting = false;
   let filling = false;
